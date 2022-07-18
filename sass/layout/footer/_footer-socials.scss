@@ -1,0 +1,44 @@
+.socials-wrapper {
+    padding-top: 12px;
+    margin-right: 93px;
+}
+
+.socials-wrapper__label {
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+}
+
+.socials-list {
+    display: flex;
+}
+
+.socials-list__item {
+    margin-right: 10px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.socials-list__link {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    fill: var(--color-white);
+
+    transition: background-color var(--time-of-animation) var(--timing-function);
+
+    &:hover,
+    &:focus {
+        background-color: var(--accent-color);
+    }
+}

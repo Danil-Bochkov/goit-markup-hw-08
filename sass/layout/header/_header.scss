@@ -1,0 +1,25 @@
+// Header
+
+.page-header {
+    display: block;
+    height: 80px;
+    border-bottom: 1px solid #ECECEC;
+}
+
+.page-header__logo {
+    display: flex;
+    margin-right: 93px;
+
+    padding-top: 24px;
+    padding-bottom: 25px;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    height: 80px;
+}

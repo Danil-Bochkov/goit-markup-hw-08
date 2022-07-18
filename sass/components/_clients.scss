@@ -1,0 +1,42 @@
+.clients__title {
+    margin-bottom: 50px;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.16;
+    text-align: center;
+}
+
+.clients-list {
+    display: flex;
+}
+
+.clients-list__item {
+    margin-right: 30px;
+    
+        &:last-child {
+            margin-right: 0;
+        }
+}
+
+.clients-list__link {
+    display: flex;
+    width: 170px;
+    height: 92px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+    fill: var(--color-icon);
+
+    transition: border-color var(--time-of-animation) var(--timing-function),
+        fill 250ms var(--timing-function);
+
+    &:hover,
+    &:focus {
+        border-color: var(--accent-color);
+        fill: var(--accent-color);
+    }
+}
