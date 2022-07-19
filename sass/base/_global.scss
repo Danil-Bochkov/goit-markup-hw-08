@@ -1,8 +1,12 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     color: var(--main-color);
     background-color: var(--color-white);
     letter-spacing: 0.03em;
+
+    &.modal-open {
+        overflow: hidden;
+    }
 }
 
 img {
@@ -26,17 +30,35 @@ img {
 }
 
 .container {
-    width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+
+    @media screen and (max-width: 767px) {
+        width: 100vw;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 768px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 1200px;
+    }
 }
 
 .section {
-    padding-top: 94px;
-    padding-bottom: 94px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 
-    &.about-us {
-        padding-top: 0;
+    
+
+    @media screen and (min-width: 1200px) {
+        padding-top: 94px;
+        padding-bottom: 94px;
+        
+        &.about-us {
+                padding-top: 0;
+            }
     }
 }
 
@@ -44,10 +66,37 @@ img {
     font-family: 'Raleway';
     text-decoration: none;
     font-weight: 700;
-    font-size: 26px;
-    line-height: 1.19;
+    font-size: 24px;
+    line-height: 1.17;
+
+    @media screen and (min-width: 768px) {
+      
+    }
+    
+    @media screen and (min-width: 1200px) {
+        
+    }
 }
 
 .logo--accent {
     color: var(--accent-color);
+}
+
+%btn {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 50px;
+    padding: 10px 32px;
+    
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    color: var(--color-white);
+    background-color: var(--accent-color);
+    cursor: pointer;
+    
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
 }

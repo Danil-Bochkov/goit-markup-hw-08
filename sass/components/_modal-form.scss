@@ -1,11 +1,7 @@
-.modal-form {
-    width: 448px;
-}
-
 .modal-form__title {
     font-weight: 700;
     font-size: 20px;
-    line-height: 1.15;
+    line-height: 1.5;
     text-align: center;
 
     margin-bottom: 12px;
@@ -34,17 +30,16 @@
     transition: border-color var(--time-of-animation) var(--timing-function);
 
     &:placeholder-shown {
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.01em;
-    
-    color: rgba(117, 117, 117, 0.5);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.16;
+        letter-spacing: 0.01em;
+
+        color: rgba(117, 117, 117, 0.5);
     }
 
     &:focus-within {
         border-color: var(--accent-color);
-        fill: var(--accent-color);
     }
 }
 
@@ -66,7 +61,6 @@
     transition: fill var(--time-of-animation) var(--timing-function);
 
     &:focus-within {
-        border-color: var(--accent-color);
         fill: var(--accent-color);
     }
 }
@@ -80,8 +74,6 @@
 
     outline: none;
 
-    align-items: center;
-
     font: inherit;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
@@ -90,7 +82,6 @@
 
     &:focus-within {
         border-color: var(--accent-color);
-        fill: var(--accent-color);
     }
 }
 
@@ -117,14 +108,12 @@
 
 .checkbox-field {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
 .checkbox-field__label {
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
@@ -148,9 +137,9 @@
 }
 
 .checkbox-field__text {
-    margin-left: 7px;
-    font-size: 14px;
-    line-height: 1.71;
+    margin-left: 5px;
+    font-size: 12px;
+    line-height: 1.16;
 }
 
 .checkbox-field__link {
