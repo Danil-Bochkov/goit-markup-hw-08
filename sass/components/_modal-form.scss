@@ -41,6 +41,8 @@
 
 .field {
     @media screen and (max-width: 767px) {
+        transition: fill var(--time-of-animation) var(--timing-function);
+        
         &:focus-within .field__label {
             color: var(--accent-color);
         }
@@ -57,11 +59,6 @@
     letter-spacing: 0.01em;
 
     color: var(--muted-text-color); 
-    transition: fill var(--time-of-animation) var(--timing-function);
-    
-    .field__input:hover & {
-        color: var(--accent-color);
-    }
 }
 
 .field__wrapper {

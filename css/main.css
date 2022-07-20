@@ -182,23 +182,30 @@ label {
 }
 
 .menu-container {
-  display: none;
-  padding: 48px 40px;
-  margin: 0 auto;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background-color: var(--color-white);
 }
 .menu-container.is-open {
   display: block;
+  overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+  .menu-container {
+    display: none;
+    position: fixed;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 48px 40px;
+    z-index: 1;
+  }
 }
 @media screen and (min-width: 768px) {
   .menu-container {
     display: flex;
     flex-grow: 1;
+    overflow: none;
   }
 }
 
@@ -211,6 +218,10 @@ label {
   padding-bottom: 10px;
   border: none;
   background-color: var(--color-white);
+  transition: fill var(--time-of-animation) var(--timing-function);
+}
+.menu-btn:hover, .menu-btn:focus {
+  fill: var(--accent-color);
 }
 .menu-btn .icon-close {
   display: none;
@@ -220,6 +231,21 @@ label {
 }
 .menu-btn.is-open .icon-menu {
   display: none;
+}
+.menu-btn_mobile {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  border: none;
+  background-color: inherit;
+}
+.menu-btn_mobile:hover, .menu-btn_mobile:focus {
+  fill: var(--accent-color);
+}
+@media screen and (min-width: 768px) {
+  .menu-btn_mobile {
+    display: none;
+  }
 }
 @media screen and (min-width: 768px) {
   .menu-btn {
@@ -231,56 +257,88 @@ label {
   display: flex;
 }
 
-.nav-list {
-  display: flex;
+@media screen and (max-width: 767px) {
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 306px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav-list {
+    display: flex;
+  }
 }
 
-.nav-list__item {
-  margin-right: 50px;
-}
-.nav-list__item:last-child {
-  margin-right: 0;
+@media screen and (min-width: 768px) {
+  .nav-list__item {
+    margin-right: 50px;
+  }
+  .nav-list__item:last-child {
+    margin-right: 0;
+  }
 }
 
 .nav-list__link {
-  position: relative;
-  display: flex;
-  padding-top: 32px;
-  padding-bottom: 32px;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
-  letter-spacing: 0.02em;
   transition: color var(--time-of-animation) var(--timing-function);
 }
-.nav-list__link:hover, .nav-list__link:focus {
-  color: var(--accent-color);
+@media screen and (max-width: 767px) {
+  .nav-list__link {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+  }
 }
-.nav-list__link:hover::after, .nav-list__link:focus::after {
-  opacity: 1;
+@media screen and (min-width: 768px) {
+  .nav-list__link {
+    position: relative;
+    display: flex;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+  }
+  .nav-list__link:hover, .nav-list__link:focus {
+    color: var(--accent-color);
+  }
+  .nav-list__link:hover::after, .nav-list__link:focus::after {
+    opacity: 1;
+  }
 }
 
-.nav-list__link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: block;
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background-color: var(--accent-color);
-  transition: opacity var(--time-of-animation) var(--timing-function);
-  opacity: 0;
+@media screen and (min-width: 768px) {
+  .nav-list__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+    transition: opacity var(--time-of-animation) var(--timing-function);
+    opacity: 0;
+  }
 }
 
 .nav-list__link--current {
   color: var(--accent-color);
+  margin-bottom: 36px;
 }
 .nav-list__link--current::after {
   opacity: 1;
 }
 
+@media screen and (max-width: 767px) {
+  .contacts-list {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
 @media screen and (min-width: 768px) {
   .contacts-list {
     display: flex;
@@ -299,11 +357,13 @@ label {
   }
 }
 
-.contacts-list__item {
-  margin-bottom: 32px;
-}
-.contacts-list__item:last-child {
-  margin-bottom: 64px;
+@media screen and (max-width: 767px) {
+  .contacts-list__item {
+    margin-bottom: 64px;
+  }
+  .contacts-list__item:last-child {
+    margin-bottom: 32px;
+  }
 }
 @media screen and (min-width: 768px) {
   .contacts-list__item {
@@ -326,6 +386,33 @@ label {
   color: var(--accent-color);
   fill: var(--accent-color);
 }
+@media screen and (max-width: 767px) {
+  .contacts-list__link_accent-menu {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    color: var(--accent-color);
+  }
+}
+@media screen and (min-width: 768px) {
+  .contacts-list__link_accent-menu {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contacts-list__link_muted-menu {
+    font-size: 24px;
+    line-height: 1.16;
+    letter-spacing: 0.02em;
+    color: var(--muted-text-color);
+  }
+}
+@media screen and (min-width: 768px) {
+  .contacts-list__link_muted-menu {
+    display: none;
+  }
+}
 @media screen and (min-width: 768px) {
   .contacts-list__link {
     display: flex;
@@ -345,26 +432,40 @@ label {
   }
 }
 
-.contacts-list__link_accent-menu {
-  font-weight: 500;
-  font-size: 34px;
-  line-height: 1.17;
-  letter-spacing: 0.02em;
-  color: var(--accent-color);
-}
-@media screen and (min-width: 768px) {
-  .contacts-list__link_accent-menu {
-    display: none;
-  }
-}
-
 .contacts-list__icon {
   display: none;
 }
 @media screen and (min-width: 768px) {
   .contacts-list__icon {
+    display: block;
     margin-right: 10px;
   }
+}
+
+.menu-socials-list {
+  display: flex;
+  gap: 10px;
+}
+@media screen and (min-width: 768px) {
+  .menu-socials-list {
+    display: none;
+  }
+}
+
+.menu-socials-list__item {
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+.menu-socials-list__item:last-child {
+  border-right: none;
+}
+
+.menu-socials-list__link {
+  padding-right: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+  color: var(--accent-color);
 }
 
 .hero {
@@ -875,6 +976,9 @@ label {
 }
 
 @media screen and (max-width: 767px) {
+  .field {
+    transition: fill var(--time-of-animation) var(--timing-function);
+  }
   .field:focus-within .field__label {
     color: var(--accent-color);
   }
@@ -888,10 +992,6 @@ label {
   line-height: 1.16;
   letter-spacing: 0.01em;
   color: var(--muted-text-color);
-  transition: fill var(--time-of-animation) var(--timing-function);
-}
-.field__input:hover .field__label {
-  color: var(--accent-color);
 }
 
 .field__wrapper {

@@ -1,6 +1,11 @@
 // // Nav Contacts
 
 .contacts-list {
+    @media screen and (max-width: 767px) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
     @media screen and (min-width: 768px) {
         display: flex;
         flex-direction: column;
@@ -17,10 +22,12 @@
 }
 
 .contacts-list__item {
-    margin-bottom: 32px;
-
-    &:last-child {
+    @media screen and (max-width: 767px) {
         margin-bottom: 64px;
+        
+        &:last-child {
+            margin-bottom: 32px;
+        }
     }
     
     @media screen and (min-width: 768px) {
@@ -30,8 +37,6 @@
         margin-bottom: 0;
     }
     }
-    
-    
     
     @media screen and (min-width: 1200px) {
         margin-bottom: 0;
@@ -47,7 +52,35 @@
         color: var(--accent-color);
         fill: var(--accent-color);
     }
+
+    &_accent-menu {
+        @media screen and (max-width: 767px) {
+            font-weight: 500;
+            font-size: 34px;
+            line-height: 1.17;
+            
+            letter-spacing: 0.02em;
+            color: var(--accent-color);
+        }
+        
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+    }
     
+    &_muted-menu {
+        @media screen and (max-width: 767px) {
+            font-size: 24px;
+            line-height: 1.16;
+            letter-spacing: 0.02em;
+            
+            color: var(--muted-text-color);
+        }
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+    }
+
     @media screen and (min-width: 768px) {
         display: flex;
         font-weight: 500;
@@ -67,22 +100,11 @@
     }
 }
 
-.contacts-list__link_accent-menu {
-    font-weight: 500;
-    font-size: 34px;
-    line-height: 1.17;    
-    
-    letter-spacing: 0.02em;
-    color: var(--accent-color);
-    @media screen and (min-width: 768px) {
-        display: none;
-    }
-}
-
 .contacts-list__icon {
     display: none;
 
     @media screen and (min-width: 768px) {
+        display: block;
         margin-right: 10px;
     }
 }

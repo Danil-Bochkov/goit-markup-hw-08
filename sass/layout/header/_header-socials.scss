@@ -1,20 +1,27 @@
 .menu-socials-list {
-    
-    
+    display: flex;
+    gap: 10px;
+
     @media screen and (min-width: 768px) {
         display: none;
     }
 }
 
 .menu-socials-list__item {
-    display: flex;
-    gap: 10px;
     border-right: 1px solid rgba(33, 33, 33, 0.2);
 
-    
-    
+    &:last-child {
+        border-right: none;
+    }
+}
+
+.menu-socials-list__link {
+    padding-right: 10px;
+
     font-weight: 500;
     font-size: 18px;
     line-height: 1.22;
     letter-spacing: 0.02em;
+
+    color: var(--accent-color);
 }
