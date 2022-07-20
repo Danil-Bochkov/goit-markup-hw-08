@@ -923,6 +923,12 @@ label {
     padding: 40px;
   }
 }
+@media screen and (min-width: 1200px) {
+  .modal {
+    width: 528px;
+    height: 581px;
+  }
+}
 
 .modal-btn-close {
   position: absolute;
@@ -943,6 +949,7 @@ label {
 .modal-btn-close:hover {
   fill: var(--accent-color);
 }
+
 .modal-form__title {
   font-weight: 700;
   font-size: 20px;
