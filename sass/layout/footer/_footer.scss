@@ -1,13 +1,30 @@
 .footer-page {
-
     background-color: var(--accent-background-color);
     color: var(--color-white);
 
     text-align: center;
+
+    @media screen and (min-width: 1200px) {
+        text-align: left;
+    }
+}
+
+.footer-page__container {
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    @media screen and (min-width: 1200px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        justify-content: left;
+    }
 }
 
 .footer-page__logo {
     display: inline-block;
     margin-bottom: 20px;
 }
-

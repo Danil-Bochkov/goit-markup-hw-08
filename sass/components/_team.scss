@@ -9,6 +9,26 @@
     font-size: 28px;
     line-height: 1.18;
     text-align: center;
+
+    @media screen and (min-width: 1200px) {
+        margin-bottom: 50px;
+        font-size: 36px;
+        line-height: 1.16;
+    }
+}
+
+.team-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .team-list__item {
@@ -17,13 +37,6 @@
     0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
-
-    margin-bottom: 30px;
-
-
-    &:last-child {
-        margin-bottom: 0;
-    }
 }
 
 .team-list__content {

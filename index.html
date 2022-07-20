@@ -15,8 +15,7 @@
 
 <body>
     <header class="page-header">
-        <div class="container">
-            <nav class="nav-menu">
+        <div class="container header__container">
                 <a class="logo page-header__logo link" href="./index.html">
                     <span class="logo--accent">Web</span><b>Studio</b></a>
                 <button 
@@ -24,23 +23,32 @@
                 class="menu-btn is-open" 
                 aria-expanded="false"
                 aria-controls="menu-container"
-                data-menu-button
+                data="data-menu-button"
                 >
                     <svg width="40" height="40" aria-label="Переключатель мобильного меню">
                         <use class="icon-close" href="./images/sprite.svg#icon-close"></use>
                         <use class="icon-menu" href="./images/sprite.svg#icon-menu"></use>
                     </svg>
                 </button>
-                <div class="menu-container is-open" id="menu-container">
+                <div class="menu-container" id="menu-container">
+                    <nav class="nav-menu">
                     <ul class="nav-list link list">
-                        <li class="nav-list__item"><a class="nav-list__link link nav-list__link--current" href="index.html">Студия</a></li>
-                        <li class="nav-list__item"><a class="nav-list__link link" href="portfolio.html">Портфолио</a>
+                        <li class="nav-list__item">
+                            <a class="nav-list__link link nav-list__link--current" 
+                            href="index.html">Студия</a>
                         </li>
-                        <li class="nav-list__item"><a class="nav-list__link link" href="">Контакт</a></li>
+                        <li class="nav-list__item">
+                            <a class="nav-list__link link" 
+                            href="portfolio.html">Портфолио</a>
+                        </li>
+                        <li class="nav-list__item">
+                            <a class="nav-list__link link"
+                             href="">Контакт</a>
                     </ul>
-                    <!-- <ul class="contacts-list link list">
+                    </nav>
+                    <ul class="contacts-list link list">
                         <li class="contacts-list__item">
-                            <a class="contacts-list__link link" href="mailto:info@devstudio.com">
+                            <a class="contacts-list__link contacts-list__link_accent-menu link" href="mailto:info@devstudio.com">
                                 <svg class="contacts-list__icon" width="16" height="12">
                                     <use href="./images/sprite.svg#icon-envelope"></use>
                                 </svg>info@devstudio.com
@@ -53,16 +61,32 @@
                                 </svg>+38 096 111 11 11
                             </a>
                         </li>
-                    </ul> -->
+                    </ul>
+                    <ul class="menu-socials-list">
+                        <li class="menu-socials-list__item">
+                            <a href=""></a>
+                        </li>
+                        <li class="menu-socials-list__item">
+                            <a href=""></a>
+                        </li>
+                        <li class="menu-socials-list__item">
+                            <a href=""></a>
+                        </li>
+                        <li class="menu-socials-list__item">
+                            <a href=""></a>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
+            
         </div>
     </header>
 
     <main>
         <section class="hero section">    
+        <div class="container">
             <h1 class="hero__title">Эффективные решения для вашего бизнеса</h1>
             <button data-modal-open class="hero__btn" type="button">Заказать услугу</button>
+        </div>
         </section>
 
         <section class="advantage section">
@@ -144,7 +168,12 @@
             <h2 class="team__title">Наша команда</h2>
             <ul class="team-list list">
                 <li class="team-list__item">
-                    <img src="images/worker1.jpg" alt="Продукт дизайнер" width="270" height="260">
+                    <img src="./images/worker1.jpg" 
+                    srcset="./images/worker1.jpg 1x,
+                            ./images/worker1@2x.jpg 2x"
+                    alt="Продукт дизайнер" 
+                    width="270" 
+                    height="260">
                     <div class="team-list__content">
                         <h3 class="team-list__name">Игорь Демьяненко</h3>
                         <p class="team-list__position">Product Designer</p>
@@ -169,7 +198,12 @@
                     </div>
                 </li>
                 <li class="team-list__item">
-                    <img src="images/worker2.jpg" alt="Фронт-энд разработчик" width="270" height="260">
+                    <img src="./images/worker2.jpg" 
+                    srcset="./images/worker2.jpg 1x,
+                            ./images/worker2@2x.jpg 2x" 
+                    alt="Продукт дизайнер" 
+                    width="270" 
+                    height="260">
                     <div class="team-list__content">
                         <h3 class="team-list__name">Ольга Репина</h3>
                         <p class="team-list__position">Frontend Developer</p>
@@ -194,7 +228,12 @@
                     </div>
                 </li>
                 <li class="team-list__item">
-                    <img src="images/worker3.jpg" alt="Маркетолог" width="270" height="260">
+                    <img src="./images/worker3.jpg" 
+                    srcset="./images/worker3.jpg 1x,
+                            ./images/worker3@2x.jpg 2x" 
+                    alt="Продукт дизайнер" 
+                    width="270" 
+                    height="260">
                     <div class="team-list__content">
                         <h3 class="team-list__name">Николай Тарасов</h3>
                         <p class="team-list__position">Marketing</p>
@@ -219,7 +258,12 @@
                     </div>
                 </li>
                 <li class="team-list__item">
-                    <img src="images/worker4.jpg" alt="UI Дизайнер" width="270" height="260">
+                    <img src="./images/worker4.jpg" 
+                    srcset="./images/worker4.jpg 1x,
+                            ./images/worker4@2x.jpg 2x" 
+                    alt="Продукт дизайнер" 
+                    width="270"
+                    height="260">
                     <div class="team-list__content">
                         <h3 class="team-list__name">Михаил Ермаков</h3>
                         <p class="team-list__position">UI Designer</p>
@@ -299,7 +343,7 @@
     </main>
 
     <footer class="footer-page section">
-        <div class="container">
+        <div class="container footer-page__container">
     
             <div class="address-wrapper">
                 <a class="logo footer-page__logo link" href="./index.html"><span class="logo--accent">Web</span>Studio</a>

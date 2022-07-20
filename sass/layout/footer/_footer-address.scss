@@ -1,7 +1,14 @@
 .address-wrapper {
+    display: block;
     margin-bottom: 60px;
-
-    
+    @media screen and (min-width: 768px) {
+        margin-left: 76px;
+        margin-bottom: 60px;
+    }
+    @media screen and (min-width: 1200px) {
+        margin: 0;
+        margin-right: 70px;
+    }
 }
 
 .footer-list {

@@ -1,7 +1,23 @@
+.advantage-list {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .advantage-list__item {
-    margin-bottom: 30px;
-    &:last-child {
-        margin-bottom: 0;
+    @media screen and (min-width: 768px) {
+        width: 354px;
+    }
+    @media screen and (min-width: 1200px) {
+        width: 270px;
     }
 }
 
@@ -27,6 +43,9 @@
     line-height: 1.14;
     text-transform: uppercase;
     text-align: center;
+    @media screen and (min-width: 768px) {
+        text-align: left;
+    }
 }
 
 .advantage-list__text {
